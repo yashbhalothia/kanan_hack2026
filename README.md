@@ -1,5 +1,7 @@
 # Student Document Vault & Instant Verifier (HACK2026)
 
+# Hosted at: https://biplabbbb.pythonanywhere.com
+
 ## 🛡️ Mission: Privacy-First Verification
 This project is a high-speed, "Zero-Storage" document verification hub designed for the HACK2026 Track 02. We solve the primary friction in student applications: the fear of data leaks. By utilizing **On-the-Fly OCR**, our system verifies document authenticity and identity matching in volatile memory—ensuring student data is processed but never permanently stored or leaked.
 
