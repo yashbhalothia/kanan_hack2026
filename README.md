@@ -1,23 +1,26 @@
-# Student Application & Document Verification System (HACK2026)
+# Student Document Vault & Instant Verifier (HACK2026)
 
-## 🚀 Mission Overview
-This project is a high-fidelity, secure digital hub designed for students navigating the study abroad process. It solves the friction of manual document review by implementing a **Logic-Driven OCR Verification Engine**. Unlike a simple cloud storage solution, this system actively parses uploaded documents to verify authenticity and ensure all mandatory data points are present.
+## 🛡️ Mission: Privacy-First Verification
+This project is a high-speed, "Zero-Storage" document verification hub designed for the HACK2026 Track 02. We solve the primary friction in student applications: the fear of data leaks. By utilizing **On-the-Fly OCR**, our system verifies document authenticity and identity matching in volatile memory—ensuring student data is processed but never permanently stored or leaked.
 
-## 🛠️ Tech Stack
-- **Frontend:** React.js + Tailwind CSS (Minimalist Glassmorphism UI)
-- **Backend:** Node.js + Express
-- **Core Engine:** OCR-based Data Extraction & Verification
-- **Icons:** Lucide-React
+## ⚡ Core Advantages
+- **Hyper-Speed:** Real-time data extraction and matching using an optimized OCR logic engine.
+- **Privacy-Centric:** No database, no cloud storage, no persistent logs. Files are verified and then purged from the server immediately.
+- **Identity Integrity:** Automatic cross-referencing between user-provided personal details and document metadata.
 
-## 🧠 The Verification Logic (Comprehension)
-The system uses OCR to scan documents and look for specific "Data Blocks" required for a successful application. It doesn't just check if a file exists; it checks if the *content* is valid.
+## 🛠️ The Logic Engine (Comprehension)
+The system operates on a **Match & Purge** architectural flow:
+1. **Input:** User enters their official name/details and uploads a document (e.g., Marksheet).
+2. **Extraction:** Simple OCR parses the image for "Data Blocks" (Names, Marks, Institution Headers).
+3. **Validation:**
+   - **Type Check:** Identifies the document type based on keyword density (e.g., "Statement of Marks" = Marksheet).
+   - **Identity Match:** Compares the extracted "Name" field against the user's provided profile. 
+4. **Verification:** - If **Match == True**: Document is marked as Verified.
+   - If **Match == False**: Document is Rejected.
+5. **Session Export:** Verified files are moved to a temporary "Vault" tab where users can download their verified bundle before the session ends.
 
-### Document-Specific Extraction:
-* **Passport:** The engine extracts the **Passport Number**, **Expiry Date**, and **Full Name**. It triggers an alert if the expiry date is within 6 months.
-* **Academic Transcripts:** Scans for **Institution Name**, **CGPA/Grades**, and **Official Seals**.
-* **Financial Statements:** Verifies the **Account Holder's Name** and **Closing Balance** to ensure it meets minimum visa requirements.
-
-## 💎 Features
-- **Minimalist Glassmorphism UI:** A sleek, translucent interface designed for a modern "Industrial" aesthetic.
-- **Triggered Logic Notifications:** Real-time feedback if a document is blurry, expired, or missing specific required fields.
-- **Dynamic Progress Tracker:** A vertical stepper that updates as the OCR engine confirms each document's validity.
+## 💎 Visual Experience
+Designed with **Minimalist Glassmorphism** to reflect a clean, transparent, and modern industrial aesthetic.
+- **Backdrop Blurs:** High-fidelity UI using Tailwind `backdrop-blur` utilities.
+- **Status HUD:** Instant visual feedback (Verified/Rejected) with subtle glow effects.
+- **The Vault:** A dedicated sidebar/tab to manage and download verified assets without server-side saves.
